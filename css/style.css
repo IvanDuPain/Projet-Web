@@ -1586,8 +1586,8 @@ footer p {
 .side-project-list {
   display: grid;
   gap: 1px;
-  padding-top: 110px;
-  background: #292929;
+  padding-top: 0;
+  background: transparent;
 }
 
 .side-project-row {
