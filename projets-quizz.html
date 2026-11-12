@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Le quiz de l'archive — Daft Punk Archives</title>
+<meta name="description" content="Testez vos connaissances sur l'univers de Daft Punk à travers 5 questions tirées des archives.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/quizz.js" defer></script></head>
+<body id="top">
+<a class="skip-link" href="#contenu">Aller au contenu</a>
+
+<nav class="nav-shell subpage-nav" aria-label="Navigation principale">
+  <a class="wordmark" href="index.html" aria-label="Retour à l’accueil"><span>DAFT</span><span>PUNK</span></a>
+  <div class="nav-links" id="menu">
+    <a href="projets-musicaux.html">Projets musicaux</a>
+    <a href="projets-divers.html">Projets divers</a>
+    <a href="membres.html">Membres</a>
+    <a href="quiz.html" class="active">Quiz</a>
+    <span class="nav-status"><i></i>Archives actives</span>
+  </div>
+  <button class="menu-button" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+    <svg aria-hidden="true" fill="none" height="20" viewBox="0 0 24 24" width="20">
+      <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7">
+        <path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/>
+      </g>
+    </svg>
+  </button>
+</nav>
+
+<main id="contenu">
+  <section class="subpage-hero">
+    <div class="subpage-grid" aria-hidden="true"></div>
+    <div class="eyebrow"><span class="eyebrow-line"></span>archive / 04</div>
+    <h1>Le quiz<br><i>de l’archive</i></h1>
+    <p>5 questions, 1 bonne réponse chacune. Les questions viennent des pages Musique, Divers et Membres : le quiz vérifie que le site a été lu.</p>
+    <span class="subpage-kicker">TEST DE CONNAISSANCES</span>
+  </section>
+
+  <section class="subpage-main">
+    <div class="subpage-toolbar">
+      <span id="quiz-progress">Question 1 / 5</span>
+      <span class="eyebrow" id="quiz-category" style="margin: 0;">Catégorie : Musique</span>
+      <span class="result-count">05 QUESTIONS</span>
+    </div>
+
+    <div class="track-modal" id="quiz-active" style="margin: 0 auto;">
+      <h2 id="quiz-question">Chargement...</h2>
+
+      <div class="track-list" id="quiz-options"></div>
+
+      <div id="quiz-feedback" hidden>
+        <p class="modal-note" id="quiz-explanation"></p>
+        <p class="modal-note"><a id="quiz-page-link" href="#">Relire la page →</a></p>
+      </div>
+
+      <div class="hero-actions">
+        <button class="sound-button" id="btn-prev" type="button"><b>← Précédente</b></button>
+        <button class="primary-button" id="btn-next" type="button" disabled>Question suivante →</button>
+      </div>
+    </div>
+
+    <div class="track-modal" id="quiz-results" hidden style="margin: 0 auto;">
+      <span class="section-index">RÉSULTAT DE L'ÉVALUATION</span>
+      <h2 id="final-score">0/5</h2>
+      <p class="modal-note" id="score-message"></p>
+
+      <div class="solo-works" id="recap-list"></div>
+
+      <div class="hero-actions">
+        <button class="primary-button" id="btn-restart" type="button">Rejouer</button>
+        <a class="sound-button" href="index.html"><b>Retour à l'accueil</b></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <a class="wordmark footer-mark" href="index.html" aria-label="Retour à l’accueil"><span>DAFT</span><span>PUNK</span></a>
+  <p>Une célébration non officielle de l’héritage du duo.</p>
+  <a class="back-top" href="#top">Haut de page <svg aria-hidden="true" fill="none" height="20" viewBox="0 0 24 24" width="20"><g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></g></svg></a>
+</footer>
+</body>
+</html>
