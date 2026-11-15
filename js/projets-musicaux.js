@@ -64,6 +64,9 @@ for (let i = 0; i < boutonsPlay.length; i++) {
         let video = fenetre.querySelector(".video-album");
         let lien = this.getAttribute("data-video");
 
+        let ligne = this.closest("li");
+        ligne.appendChild(video); 
+
         video.src = lien + "?autoplay=1";
         video.style.display = "block";
     });

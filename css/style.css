@@ -2098,3 +2098,12 @@ dialog.track-modal h2 {
     border: 0;
     margin-top: 20px;
 }
+
+.track-list li {
+    flex-wrap: wrap;
+}
+
+.track-list li .video-album {
+    flex-basis: 100%;
+    margin-top: 0;
+}
