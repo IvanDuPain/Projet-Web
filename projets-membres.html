@@ -56,54 +56,57 @@
     <main class="profile-grid" id="contenu">
 
         <!-- Thomas Bangalter -->
-        <article class="profile-card profile-silver">
-            <span class="profile-number">01</span>
+        <article class="profile-silver">
+            <div class="side-project-visual">
+                <span class="profile-number">01</span>
 
-            <!-- Casque affiché si la photo est indisponible -->
-            <div class="profile-helmet">
-                <svg class="helmet" role="img"
-                    aria-label="Casque argenté stylisé"
-                    viewBox="0 0 420 510">
+                <!-- Casque affiché si la photo est indisponible -->
+                <div class="profile-helmet">
+                    <svg class="helmet" role="img"
+                        aria-label="Casque argenté stylisé"
+                        viewBox="0 0 420 510">
 
-                    <defs>
-                        <linearGradient id="h8-s" x1="0" x2="1" y1="0" y2="1">
-                            <stop offset="0" stop-color="#f4f8fa"/>
-                            <stop offset=".28" stop-color="#8c969c"/>
-                            <stop offset=".58" stop-color="#e2e9ec"/>
-                            <stop offset="1" stop-color="#3c4245"/>
-                        </linearGradient>
+                        <defs>
+                            <linearGradient id="h8-s" x1="0" x2="1" y1="0" y2="1">
+                                <stop offset="0" stop-color="#f4f8fa"/>
+                                <stop offset=".28" stop-color="#8c969c"/>
+                                <stop offset=".58" stop-color="#e2e9ec"/>
+                                <stop offset="1" stop-color="#3c4245"/>
+                            </linearGradient>
 
-                        <linearGradient id="h8-v" x1="0" x2="1">
-                            <stop offset="0" stop-color="#040404"/>
-                            <stop offset=".48" stop-color="#132328"/>
-                            <stop offset=".7" stop-color="#35535c"/>
-                            <stop offset="1" stop-color="#050505"/>
-                        </linearGradient>
+                            <linearGradient id="h8-v" x1="0" x2="1">
+                                <stop offset="0" stop-color="#040404"/>
+                                <stop offset=".48" stop-color="#132328"/>
+                                <stop offset=".7" stop-color="#35535c"/>
+                                <stop offset="1" stop-color="#050505"/>
+                            </linearGradient>
 
-                        <filter id="h8-g">
-                            <feGaussianBlur stdDeviation="10"/>
-                        </filter>
-                    </defs>
+                            <filter id="h8-g">
+                                <feGaussianBlur stdDeviation="10"/>
+                            </filter>
+                        </defs>
 
-                    <ellipse cx="210" cy="447" rx="140" ry="24"
-                            fill="#9cf5ff" opacity=".36" filter="url(#h8-g)"/>
+                        <ellipse cx="210" cy="447" rx="140" ry="24"
+                                fill="#9cf5ff" opacity=".36" filter="url(#h8-g)"/>
 
-                    <path d="M79 343V177C79 76 137 27 210 27s131 49 131 150v166l-37 99H116Z"
-                        fill="url(#h8-s)" stroke="#c8d3d8" stroke-width="4"/>
-                    <path d="M87 177c15-81 60-119 123-119 65 0 109 38 123 119l-17 114c-49 24-163 24-212 0Z"
-                        fill="url(#h8-v)" stroke="#0b0b0b" stroke-width="7"/>
-                    <path d="M106 178c71-27 139-26 210 0"
-                        fill="none" stroke="#d8faff" stroke-width="6" opacity=".6"/>
-                    <path d="M129 315v78M151 325v79M174 331v80M198 334v80M222 334v80M246 331v80M269 325v79M291 315v78"
-                        fill="none" stroke="#111" stroke-width="8" opacity=".5"/>
-                    <path d="m119 438 91 30 91-30"
-                        fill="none" stroke="#070707" stroke-width="9"/>
-                    <path d="M210 58v119"
-                        fill="none" stroke="#111" stroke-width="7" opacity=".75"/>
-                </svg>
+                        <path d="M79 343V177C79 76 137 27 210 27s131 49 131 150v166l-37 99H116Z"
+                            fill="url(#h8-s)" stroke="#c8d3d8" stroke-width="4"/>
+                        <path d="M87 177c15-81 60-119 123-119 65 0 109 38 123 119l-17 114c-49 24-163 24-212 0Z"
+                            fill="url(#h8-v)" stroke="#0b0b0b" stroke-width="7"/>
+                        <path d="M106 178c71-27 139-26 210 0"
+                            fill="none" stroke="#d8faff" stroke-width="6" opacity=".6"/>
+                        <path d="M129 315v78M151 325v79M174 331v80M198 334v80M222 334v80M246 331v80M269 325v79M291 315v78"
+                            fill="none" stroke="#111" stroke-width="8" opacity=".5"/>
+                        <path d="m119 438 91 30 91-30"
+                            fill="none" stroke="#070707" stroke-width="9"/>
+                        <path d="M210 58v119"
+                            fill="none" stroke="#111" stroke-width="7" opacity=".75"/>
+                    </svg>
+                </div>
+
             </div>
 
-            <div class="profile-content">
+            <div class="side-project-copy">
                 <span>Compositeur • Producteur • Fondateur de Roulé</span>
 
                 <h2>Thomas<br>Bangalter</h2>
@@ -112,62 +115,105 @@
                     Architecte du son et de l’image, Thomas développe une écriture
                     physique où le club, le cinéma et la musique orchestrale se rencontrent.
                 </p>
+                <h3 class="solo-works">Du piano à Daft Punk</h3>
+                <p>
+                    Né à Paris en 1975, Thomas Bangalter apprend le piano dès l’enfance.
+                    Au collège Carnot, il rencontre Guy-Manuel de Homem-Christo. Les deux
+                    amis jouent du rock avec Laurent Brancowitz dans le groupe Darlin’,
+                    puis se tournent vers la musique électronique. En 1993, ils forment
+                    Daft Punk. Leur premier album, <i>Homework</i>, sort en 1997.
+                </p>
 
-               <div class="solo-works">
-                    <button type="button" class="primary-button" data-album="bio-thomas">
-                        Biographie
-                    </button>
-                </div>
+                <h3 class="solo-works">La séparation de Daft Punk</h3>
+                <p>
+                    Le 22 février 2021, Thomas et Guy-Manuel annoncent la fin de leur duo
+                    avec <i>Epilogue</i>. Dans cette vidéo, les deux robots se retrouvent
+                    dans le désert. Les dates « 1993–2021 » apparaissent à l’écran et
+                    marquent la fin de vingt-huit ans de musique à deux.
+                </p>
+
+                <h3 class="solo-works">Ses projets personnels</h3>
+                <p>
+                    En parallèle de Daft Punk, Thomas fonde le label Roulé. En 1998,
+                    il enregistre <i>Music Sounds Better with You</i> avec Alan Braxe
+                    et Benjamin Diamond sous le nom de Stardust. Après la séparation
+                    du duo, il explore la musique orchestrale avec <i>Mythologies</i>,
+                    un ballet d’Angelin Preljocaj présenté à Bordeaux en 2022.
+                </p>
+                <section class="solo-works">
+                    <small>ŒUVRES SOLO / ASSOCIÉES</small>
+
+                    <span>
+                        <i>01</i>
+                        Stardust
+                        <a href="https://fr.wikipedia.org/wiki/Stardust_(groupe)" aria-label="Stardust sur Wikipédia">→</a>
+                    </span>
+
+                    <span>
+                        <i>02</i>
+                        Irréversible
+                        <a href="https://en.wikipedia.org/wiki/Irréversible_(soundtrack)" aria-label="Bande originale d’Irréversible sur Wikipédia en anglais">→</a>
+                    </span>
+
+                    <span>
+                        <i>03</i>
+                        Mythologies
+                        <a href="https://fr.wikipedia.org/wiki/Mythologies_(album)" aria-label="Mythologies sur Wikipédia">→</a>
+                    </span>
+                </section>
             </div>
         </article>
 
         <!-- Guy-Manuel de Homem-Christo -->
-        <article class="profile-card profile-gold">
-            <span class="profile-number">02</span>
+        <article class="profile-gold">
+            <div class="side-project-visual">
+                <span class="profile-number">02</span>
 
-            <!-- Casque affiché si la photo est indisponible -->
-            <div class="profile-helmet">
-                <svg class="helmet" role="img"
-                    aria-label="Casque doré stylisé"
-                    viewBox="0 0 420 510">
+                <!-- Casque affiché si la photo est indisponible -->
+                <div class="profile-helmet">
+                    <svg class="helmet" role="img"
+                        aria-label="Casque doré stylisé"
+                        viewBox="0 0 420 510">
 
-                    <defs>
-                        <linearGradient id="h9-s" x1="0" x2="1" y1="0" y2="1">
-                            <stop offset="0" stop-color="#fff0a3"/>
-                            <stop offset=".28" stop-color="#c89419"/>
-                            <stop offset=".58" stop-color="#ffe36a"/>
-                            <stop offset="1" stop-color="#5b3502"/>
-                        </linearGradient>
+                        <defs>
+                            <linearGradient id="h9-s" x1="0" x2="1" y1="0" y2="1">
+                                <stop offset="0" stop-color="#fff0a3"/>
+                                <stop offset=".28" stop-color="#c89419"/>
+                                <stop offset=".58" stop-color="#ffe36a"/>
+                                <stop offset="1" stop-color="#5b3502"/>
+                            </linearGradient>
 
-                        <linearGradient id="h9-v" x1="0" x2="1">
-                            <stop offset="0" stop-color="#040404"/>
-                            <stop offset=".48" stop-color="#352408"/>
-                            <stop offset=".7" stop-color="#85560c"/>
-                            <stop offset="1" stop-color="#050505"/>
-                        </linearGradient>
+                            <linearGradient id="h9-v" x1="0" x2="1">
+                                <stop offset="0" stop-color="#040404"/>
+                                <stop offset=".48" stop-color="#352408"/>
+                                <stop offset=".7" stop-color="#85560c"/>
+                                <stop offset="1" stop-color="#050505"/>
+                            </linearGradient>
 
-                        <filter id="h9-g">
-                            <feGaussianBlur stdDeviation="10"/>
-                        </filter>
-                    </defs>
+                            <filter id="h9-g">
+                                <feGaussianBlur stdDeviation="10"/>
+                            </filter>
+                        </defs>
 
-                    <ellipse cx="210" cy="447" rx="140" ry="24"
-                            fill="#ffd700" opacity=".36" filter="url(#h9-g)"/>
+                        <ellipse cx="210" cy="447" rx="140" ry="24"
+                                fill="#ffd700" opacity=".36" filter="url(#h9-g)"/>
 
-                    <path d="M79 343V177C79 76 137 27 210 27s131 49 131 150v166l-37 99H116Z"
-                        fill="url(#h9-s)" stroke="#ffd700" stroke-width="4"/>
-                    <path d="M87 177c15-81 60-119 123-119 65 0 109 38 123 119l-17 114c-49 24-163 24-212 0Z"
-                        fill="url(#h9-v)" stroke="#0b0b0b" stroke-width="7"/>
-                    <path d="M106 178c71-27 139-26 210 0"
-                        fill="none" stroke="#fff2a8" stroke-width="6" opacity=".6"/>
-                    <path d="M129 315v78M151 325v79M174 331v80M198 334v80M222 334v80M246 331v80M269 325v79M291 315v78"
-                        fill="none" stroke="#111" stroke-width="8" opacity=".5"/>
-                    <path d="m119 438 91 30 91-30"
-                        fill="none" stroke="#070707" stroke-width="9"/>
-                </svg>
+                        <path d="M79 343V177C79 76 137 27 210 27s131 49 131 150v166l-37 99H116Z"
+                            fill="url(#h9-s)" stroke="#ffd700" stroke-width="4"/>
+                        <path d="M87 177c15-81 60-119 123-119 65 0 109 38 123 119l-17 114c-49 24-163 24-212 0Z"
+                            fill="url(#h9-v)" stroke="#0b0b0b" stroke-width="7"/>
+                        <path d="M106 178c71-27 139-26 210 0"
+                            fill="none" stroke="#fff2a8" stroke-width="6" opacity=".6"/>
+                        <path d="M129 315v78M151 325v79M174 331v80M198 334v80M222 334v80M246 331v80M269 325v79M291 315v78"
+                            fill="none" stroke="#111" stroke-width="8" opacity=".5"/>
+                        <path d="m119 438 91 30 91-30"
+                            fill="none" stroke="#070707" stroke-width="9"/>
+                    </svg>
+                </div>
+
             </div>
 
-            <div class="profile-content">
+        <div class="side-project-copy">
                 <span>Compositeur • Producteur • Fondateur de Crydamoure</span>
 
                 <h2>Guy-Manuel<br>de Homem-Christo</h2>
@@ -176,95 +222,56 @@
                     Figure discrète de la French Touch, Guy-Manuel façonne des
                     productions chaleureuses, mélodiques et immédiatement reconnaissables.
                 </p>
+                <h3 class="solo-works">De la guitare au casque doré</h3>
+                <p>
+                    Né à Neuilly-sur-Seine en 1974, Guy-Manuel de Homem-Christo joue
+                    de la guitare avant de découvrir la house avec Thomas Bangalter.
+                    Après leurs débuts dans le groupe de rock Darlin’, ils forment
+                    Daft Punk. À l’époque de <i>Discovery</i>, Guy-Manuel adopte
+                    le casque doré qui permet de le reconnaître sur scène.
+                </p>
 
-                <div class="solo-works">
-                    <button type="button" class="primary-button" data-album="bio-guyman">
-                        Biographie
-                    </button>
-                </div>
+                <h3 class="solo-works">La séparation de Daft Punk</h3>
+                <p>
+                    En février 2021, Guy-Manuel et Thomas annoncent la fin de Daft Punk.
+                    Dans la dernière scène d’<i>Epilogue</i>, le robot au casque doré
+                    s’éloigne seul dans le désert. On y entend <i>Touch</i>, un morceau
+                    de <i>Random Access Memories</i>, leur dernier album studio.
+                </p>
+
+                <h3 class="solo-works">Ses projets personnels</h3>
+                <p>
+                    Dès 1997, Guy-Manuel fonde le label Crydamoure avec Éric Chédeville.
+                    Ils publient leurs morceaux de house sous le nom de Le Knight Club.
+                    Guy-Manuel travaille aussi avec d’autres artistes. Il produit l’album
+                    <i>Sexuality</i> de Sébastien Tellier en 2008, puis participe en 2023
+                    à la composition et à la production de <i>Modern Jam</i> de Travis Scott.
+                </p>
+                <section class="solo-works">
+                    <small>ŒUVRES SOLO / ASSOCIÉES</small>
+
+                    <span>
+                        <i>01</i>
+                        Crydamoure
+                        <a href="https://fr.wikipedia.org/wiki/Crydamoure" aria-label="Crydamoure sur Wikipédia">→</a>
+                    </span>
+
+                    <span>
+                        <i>02</i>
+                        Le Knight Club
+                        <a href="https://fr.wikipedia.org/wiki/Le_Knight_Club" aria-label="Le Knight Club sur Wikipédia">→</a>
+                    </span>
+
+                    <span>
+                        <i>03</i>
+                        Nightcall (Kavinsky)
+                        <a href="https://fr.wikipedia.org/wiki/Nightcall" aria-label="Nightcall sur Wikipédia">→</a>
+                    </span>
+                </section>
             </div>
         </article>
 
     </main>
-        <!-- Biographie de Thomas -->
-    <dialog class="track-modal" id="bio-thomas" aria-labelledby="titre-thomas">
-        <button type="button" class="modal-close" aria-label="Fermer">×</button>
-
-        <h2 id="titre-thomas">Thomas Bangalter</h2>
-
-                
-        <h3>Du piano à la musique électronique</h3>
-        <p>
-            Né à Paris le 3 janvier 1975, Thomas Bangalter apprend le piano dès
-            l’enfance. En 1986, il rencontre Guy-Manuel de Homem-Christo au collège
-            Carnot. Les deux amis jouent d’abord du rock avec Laurent Brancowitz
-            dans le groupe Darlin’. En 1993, Thomas et Guy-Manuel forment Daft Punk.
-            Quatre ans plus tard, leur premier album, <i>Homework</i>, fait danser
-            les clubs du monde entier avec des titres comme <i>Da Funk</i> et
-            <i>Around the World</i>.
-        </p>
-
-        <h3>La séparation de Daft Punk</h3>
-        <p>
-            Le 22 février 2021, Thomas et Guy-Manuel annoncent la fin de Daft Punk
-            avec <i>Epilogue</i>. Dans cette courte vidéo, les deux robots se
-            retrouvent dans le désert. Les dates « 1993–2021 » apparaissent à l’écran
-            et marquent la fin de vingt-huit ans de musique à deux.
-        </p>
-
-        <h3>Ses projets personnels, de Stardust au ballet</h3>
-        <p>
-            Dès les années 1990, Thomas publie aussi de la musique sur son propre
-            label, Roulé. En 1998, il forme Stardust avec Alan Braxe et le chanteur
-            Benjamin Diamond. Tous trois signent <i>Music Sounds Better with You</i>,
-            le seul morceau du groupe. Après Daft Punk, Thomas explore un autre
-            univers en composant pour un orchestre. Sa musique accompagne
-            <i>Mythologies</i>, un ballet d’Angelin Preljocaj présenté à Bordeaux
-            en 2022, puis paraît en album en 2023.
-        </p>
-            
-    </dialog>
-
-    <!-- Biographie de Guy-Manuel -->
-    <dialog class="track-modal" id="bio-guyman" aria-labelledby="titre-guyman">
-        <button type="button" class="modal-close" aria-label="Fermer">×</button>
-
-        <h2 id="titre-guyman">Guy-Manuel de Homem-Christo</h2>
-
-        <h3>De la guitare au casque doré</h3>
-        <p>
-            Né le 8 février 1974 à Neuilly-sur-Seine, Guy-Manuel de Homem-Christo
-            commence à jouer de la guitare pendant sa jeunesse. Au collège Carnot,
-            il se lie d’amitié avec Thomas Bangalter. Guitariste au sein de Darlin’,
-            il découvre ensuite avec Thomas la house et les possibilités des boîtes
-            à rythmes. Ensemble, ils forment Daft Punk. À l’époque de
-            <i>Discovery</i>, Guy-Manuel adopte le casque doré qui devient sa
-            signature visuelle.
-        </p>
-
-        <h3>La séparation de Daft Punk</h3>
-        <p>
-            Le 22 février 2021, Guy-Manuel et Thomas annoncent leur séparation dans
-            <i>Epilogue</i>. Pour leurs adieux, ils choisissent des images
-            d’<i>Electroma</i>, le film qu’ils ont réalisé ensemble. Le robot au
-            casque doré s’éloigne seul dans le désert, tandis que résonnent les
-            voix de <i>Touch</i>, un morceau de leur dernier album studio,
-            <i>Random Access Memories</i>.
-        </p>
-
-        <h3>Ses projets personnels, de la house au rap</h3>
-        <p>
-            En parallèle de Daft Punk, Guy-Manuel fonde le label Crydamoure avec
-            Éric Chédeville en 1997. Sous le nom de Le Knight Club, les deux
-            musiciens y publient leurs propres morceaux de house. Guy-Manuel
-            travaille aussi en studio pour d’autres artistes. En 2008, il produit
-            <i>Sexuality</i>, un album de Sébastien Tellier. Il poursuit ces
-            collaborations après la séparation de Daft Punk. En 2023, il participe
-            à la composition et à la production de <i>Modern Jam</i>, un titre
-            de Travis Scott sur l’album <i>Utopia</i>.
-        </p>
-        
-    </dialog>
     <footer>
         <a class="wordmark footer-mark"
         href="index.html"
