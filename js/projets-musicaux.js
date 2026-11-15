@@ -55,33 +55,5 @@ for (let i = 0; i < boutonsFermer.length; i++) {
     });
 }
 
-// Afficher la vidéo du morceau sélectionné.
-let boutonsPlay = document.querySelectorAll("[data-video]");
 
-for (let i = 0; i < boutonsPlay.length; i++) {
-    boutonsPlay[i].addEventListener("click", function () {
-        let fenetre = this.closest("dialog");
-        let video = fenetre.querySelector(".video-album");
-        let lien = this.getAttribute("data-video");
 
-        let ligne = this.closest("li");
-        ligne.appendChild(video); 
-
-        video.src = lien + "?autoplay=1";
-        video.style.display = "block";
-    });
-}
-
-// Arrêter la vidéo quand la fenêtre de l’album se ferme.
-let fenetresAlbums = document.querySelectorAll("dialog.track-modal");
-
-for (let i = 0; i < fenetresAlbums.length; i++) {
-    fenetresAlbums[i].addEventListener("close", function () {
-        let video = this.querySelector(".video-album");
-
-        if (video) {
-            video.removeAttribute("src");
-            video.style.display = "none";
-        }
-    });
-}
