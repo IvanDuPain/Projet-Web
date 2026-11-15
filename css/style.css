@@ -2010,10 +2010,15 @@ footer p {
   object-fit: cover;
 }
 
+/* Photo du duo fondue dans le fond noir du header :
+   on assombrit légèrement le fond gris de la photo puis on efface
+   les bords avec un masque en dégradé (aucun rectangle visible). */
 .photo-hero {
-  object-fit: contain;
-  object-position: bottom;
-  filter: drop-shadow(0 30px 30px rgba(0, 0, 0, 0.45));
+  object-fit: cover;
+  object-position: center top;
+  filter: brightness(0.85) contrast(1.15);
+  -webkit-mask-image: radial-gradient(closest-side ellipse at 50% 40%, #000 58%, transparent 100%);
+  mask-image: radial-gradient(closest-side ellipse at 50% 40%, #000 58%, transparent 100%);
 }
 
 .photo-portrait {
@@ -2063,8 +2068,107 @@ footer p {
 /* ---------- Corrections de mise en page ---------- */
 .album-art-title { font-size: clamp(18px, 2.1vw, 34px); }
 .album-art.album-black::before { top: 50%; left: 50%; transform: translate(-50%, -50%); }
-.masonry { grid-template-rows: 380px 330px 300px; }
-.merch { grid-column: 1 / -1; }
+.masonry { grid-template-rows: 380px 330px 320px; }
+
+/* ---------- Projets divers (accueil) : tuiles photo lisibles ---------- */
+a.feature-tile {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+}
+
+.feature-tile .photo {
+  transition: transform 0.6s ease;
+}
+
+.feature-tile:hover .photo,
+.feature-tile:focus-visible .photo {
+  transform: scale(1.04);
+}
+
+/* Voile sombre en bas de chaque tuile : le texte blanc reste lisible
+   quelle que soit la luminosité de l'image. */
+.feature-tile::after {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  content: "";
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.75) 35%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Étiquette du haut en pastille pour rester visible sur les images claires */
+.feature-tile .tile-index {
+  display: inline-block;
+  z-index: 3;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.12em;
+}
+
+.tile-kicker {
+  display: block;
+  margin-bottom: 6px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.tile-content h3 {
+  color: #fff;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
+}
+
+.tile-content p {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+/* Couleur d'accent de chaque projet, reprise de son image */
+.interstella .tile-kicker { color: #ffd23f; }
+.alive .tile-kicker       { color: #ff8a5c; }
+.tron .tile-kicker        { color: var(--cyan); }
+
+/* Interstella : on cadre sur les personnages, le logo est à droite */
+.interstella .photo { object-position: 30% center; }
+
+/* Alive : fond de secours sombre, cadrage sur la pyramide */
+.alive { background: #120814; }
+.alive .photo { object-position: center 40%; }
+
+/* Tron : pleine largeur, cadrage sur les casques */
+.tron {
+  grid-column: 1 / -1;
+  background: #031417;
+}
+.tron .photo { object-position: center 55%; }
+
+/* Electroma : image à fond blanc -> tuile claire et texte noir */
+.electroma {
+  background: #fff;
+  color: #111;
+}
+.electroma::after { display: none; }
+.electroma .photo {
+  inset: 70px 0 auto;
+  width: 100%;
+  height: 62%;
+  object-fit: cover;
+  object-position: center center;
+}
+.electroma .tile-index {
+  background: #111;
+}
+.electroma .tile-kicker { color: #c0392b; }
+.electroma .tile-content h3 {
+  color: #111;
+  text-shadow: none;
+}
+.electroma .tile-content p { color: #444; }
 @media (max-width: 760px) { .album-art-title { font-size: 34px; } }
 
 
