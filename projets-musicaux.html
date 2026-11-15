@@ -1,11 +1,149 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projets Musicaux - Daft Punk</title>
+
+    <meta name="description" content="Les quatre albums studio de Daft Punk : Homework, Discovery, Human After All et Random Access Memories.">
+
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+
+    <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
-    
+
+    <body id="top">
+    <a class="skip-link" href="#contenu">Aller au contenu</a>
+
+    <nav class="nav-shell subpage-nav" aria-label="Navigation principale">
+        <a class="wordmark" href="index.html" aria-label="Retour à l’accueil"><span>DAFT</span><span>PUNK</span></a>
+        <div class="nav-links" id="menu"><a class="active" aria-current="page" href="projets-musicaux.html">Projets musicaux</a><a href="projets-divers.html">Projets divers</a><a href="membres.html">Membres</a><span class="nav-status"><i></i>Archives actives</span></div>
+        <button class="menu-button" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><svg aria-hidden="true" fill="none" height="20" viewBox="0 0 24 24" width="20"><g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"><path d="M4 7h16"/><path d="M4 12h16"/><path d="M4 17h16"/></g></svg></button>
+    </nav>
+    <header class="subpage-hero">
+        <span class="section-index">Archive / 01</span>
+
+        <h1>Projets<br><i>musicaux</i></h1>
+
+        <p>
+            Quatre chefs-d'œuvre qui ont redéfini la musique moderne. De l'underground parisien au sommet du monde en quatre actes.
+        </p>
+        <span class="subpage-kicker">1997 — 2013</span>
+    </header>
+    <main class="subpage-main" id="contenu">
+
+        <input type="radio" name="epoque" id="tous" checked>
+        <input type="radio" name="epoque" id="annees1990">
+        <input type="radio" name="epoque" id="annees2000">
+        <input type="radio" name="epoque" id="annees2010">
+
+        <div class="subpage-toolbar">
+            <span>Filtrer par époque</span>
+
+            <div class="filter-row">
+                <label for="tous">Tous</label>
+                <label for="annees1990">1990s</label>
+                <label for="annees2000">2000s</label>
+                <label for="annees2010">2010s</label>
+            </div>
+
+            <span class="result-count">04 albums au total</span>
+        </div>
+
+        <div class="sub-album-grid">
+
+            <!-- Album 1 -->
+            <article class="sub-album-card epoque1990">
+                <div class="sub-album-art">
+                    <img class="photo"
+                        src="img/Homework.jpg"
+                        alt="Pochette de Homework">
+
+                    <button type="button">▶ Voir l’album</button>
+                </div>
+
+                <div class="sub-album-info">
+                    <div>
+                        <span>1997</span>
+                        <h2>Homework</h2>
+                    </div>
+                    <p>French house</p>
+                </div>
+            </article>
+
+            <!-- Album 2 -->
+            <article class="sub-album-card epoque2000">
+                <div class="sub-album-art">
+                    <img class="photo"
+                        src="img/Discovery.jpg"
+                        alt="Pochette de Discovery">
+
+                    <button type="button">▶ Voir l’album</button>
+                </div>
+
+                <div class="sub-album-info">
+                    <div>
+                        <span>2001</span>
+                        <h2>Discovery</h2>
+                    </div>
+                    <p>Electro-disco</p>
+                </div>
+            </article>
+
+            <!-- Album 3 -->
+            <article class="sub-album-card epoque2000">
+                <div class="sub-album-art">
+                    <img class="photo"
+                        src="img/Human_After_All.jpg"
+                        alt="Pochette de Human After All">
+
+                    <button type="button">▶ Voir l’album</button>
+                </div>
+
+                <div class="sub-album-info">
+                    <div>
+                        <span>2005</span>
+                        <h2>Human After All</h2>
+                    </div>
+                    <p>Electro-rock</p>
+                </div>
+            </article>
+
+            <!-- Album 4 -->
+            <article class="sub-album-card epoque2010">
+                <div class="sub-album-art">
+                    <img class="photo"
+                        src="img/Random_Access_Memories.jpg"
+                        alt="Pochette de Random Access Memories">
+
+                    <button type="button">▶ Voir l’album</button>
+                </div>
+
+                <div class="sub-album-info">
+                    <div>
+                        <span>2013</span>
+                        <h2>Random Access Memories</h2>
+                    </div>
+                    <p>Disco • Funk</p>
+                </div>
+            </article>
+
+        </div>
+    </main>
+    <footer>
+        <a class="wordmark footer-mark" href="index.html" aria-label="Retour à l’accueil"><span>DAFT</span><span>PUNK</span></a>
+        <p>Une célébration non officielle de l’héritage du duo.</p>
+        <a class="back-top" href="#top">Haut de page <svg aria-hidden="true" fill="none" height="20" viewBox="0 0 24 24" width="20"><g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></g></svg></a>
+    </footer>
+    <div id="modal-root"></div>
+
+    <script src="js/site.js" defer></script>
+
 </body>
 </html>
