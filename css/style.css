@@ -1605,7 +1605,18 @@ footer p {
   overflow: hidden;
   min-height: 520px;
 }
+.side-project-visual.interstella-visual {
+  min-height: 0;
+  align-self: center;
+}
 
+.side-project-visual.interstella-visual .photo {
+  position: relative;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  display: block;
+}
 .side-project-visual > span {
   position: absolute;
   z-index: 4;
