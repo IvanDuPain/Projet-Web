@@ -2055,3 +2055,19 @@ footer p {
 .masonry { grid-template-rows: 380px 330px 300px; }
 .merch { grid-column: 1 / -1; }
 @media (max-width: 760px) { .album-art-title { font-size: 34px; } }
+
+
+dialog.track-modal {
+    margin: auto;
+    color: var(--white);
+    max-height: 85vh;
+    overflow-y: auto;
+}
+
+dialog.track-modal::backdrop {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+dialog.track-modal h2 {
+    margin-right: 40px;
+}
