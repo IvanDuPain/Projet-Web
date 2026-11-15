@@ -2071,3 +2071,30 @@ dialog.track-modal::backdrop {
 dialog.track-modal h2 {
     margin-right: 40px;
 }
+
+/* Placer le titre et son bouton côte à côte */
+.track-list li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 10px 0;
+    border-top: 1px solid #333;
+}
+
+/* Petit bouton à droite du titre */
+.track-list li button {
+    display: block;
+    width: auto;
+    padding: 6px 12px;
+    border: 0;
+}
+
+/* Cacher la vidéo avant le premier clic */
+.video-album {
+    display: none;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+    margin-top: 20px;
+}
