@@ -828,9 +828,53 @@ a:focus-visible {
 
 .member {
   position: relative;
+  display: block;
   min-width: 0;
   overflow: hidden;
   border-top: 1px solid #282828;
+  cursor: pointer;
+}
+
+.member .photo-portrait,
+.member .helmet {
+  transition: transform 0.5s ease;
+}
+
+.member:hover .photo-portrait,
+.member:hover .helmet,
+.member:focus-visible .photo-portrait,
+.member:focus-visible .helmet {
+  transform: translateX(-50%) scale(1.04);
+}
+
+.member-more {
+  display: inline-block;
+  margin-top: 18px;
+  color: var(--gold);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: transform 0.3s ease;
+}
+
+.member:hover .member-more,
+.member:focus-visible .member-more {
+  transform: translateX(6px);
+}
+
+.members-link {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--gold);
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.members-link:hover {
+  text-decoration: underline;
 }
 
 .member-silver {
