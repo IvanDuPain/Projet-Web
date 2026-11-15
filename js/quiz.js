@@ -46,7 +46,6 @@ const quizData = [
   }
 ];
 
-const letters = ["A", "B", "C", "D"];
 let currentIndex = 0;
 let userAnswers = new Array(quizData.length).fill(null);
 
@@ -54,7 +53,6 @@ const elActive = document.getElementById("quiz-active");
 const elResults = document.getElementById("quiz-results");
 const elProgress = document.getElementById("quiz-progress");
 const elCategory = document.getElementById("quiz-category");
-const elLiveScore = document.getElementById("live-score");
 const elQuestion = document.getElementById("quiz-question");
 const elOptions = document.getElementById("quiz-options");
 const elFeedback = document.getElementById("quiz-feedback");
@@ -64,62 +62,39 @@ const btnPrev = document.getElementById("btn-prev");
 const btnNext = document.getElementById("btn-next");
 const btnRestart = document.getElementById("btn-restart");
 
-function getScore() {
-  return quizData.reduce((total, item, idx) => {
-    return total + (userAnswers[idx] === item.answer ? 1 : 0);
-  }, 0);
-}
-
-function updateLiveScore() {
-  if (elLiveScore) {
-    elLiveScore.textContent = `Score : ${getScore()} / ${quizData.length}`;
-  }
-}
+const letters = ["A", "B", "C", "D"];
 
 function renderQuestion() {
   if (!elQuestion) return;
-
   const item = quizData[currentIndex];
   const selected = userAnswers[currentIndex];
-  const isAnswered = selected !== null;
 
   elProgress.textContent = `Question ${currentIndex + 1} / ${quizData.length}`;
   elCategory.textContent = `Catégorie : ${item.category}`;
   elQuestion.textContent = item.question;
-  updateLiveScore();
 
   elOptions.innerHTML = "";
   item.options.forEach((optText, idx) => {
     const btn = document.createElement("button");
     btn.type = "button";
 
-    const spanLetter = document.createElement("span");
-    spanLetter.textContent = `${letters[idx]}.`;
-
-    const strongText = document.createElement("strong");
-    strongText.textContent = optText;
-
-    const spanStatus = document.createElement("span");
-
-    if (isAnswered) {
+    let statusLabel = "";
+    if (selected !== null) {
       btn.disabled = true;
       if (idx === item.answer) {
-        spanStatus.textContent = "✔ Bonne réponse";
+        statusLabel = "✔ Bonne réponse";
       } else if (idx === selected) {
-        spanStatus.textContent = "✖ Votre choix";
+        statusLabel = "✖ Votre choix";
       }
     } else {
-      btn.addEventListener("click", () => {
-        userAnswers[currentIndex] = idx;
-        renderQuestion();
-      });
+      btn.addEventListener("click", () => selectOption(idx));
     }
 
-    btn.append(spanLetter, strongText, spanStatus);
+    btn.innerHTML = `<span>${letters[idx]}.</span><strong>${optText}</strong><span>${statusLabel}</span>`;
     elOptions.appendChild(btn);
   });
 
-  if (isAnswered) {
+  if (selected !== null) {
     elExplanation.textContent = item.explanation;
     elPageLink.textContent = item.linkText;
     elPageLink.href = item.linkHref;
@@ -134,53 +109,9 @@ function renderQuestion() {
   btnNext.textContent = currentIndex === quizData.length - 1 ? "Voir le résultat →" : "Question suivante →";
 }
 
-function showResults() {
-  elActive.hidden = true;
-  elResults.hidden = false;
-
-  const score = getScore();
-  const total = quizData.length;
-  const recapList = document.getElementById("recap-list");
-
-  recapList.innerHTML = "";
-  const title = document.createElement("small");
-  title.textContent = "Récapitulatif des réponses";
-  recapList.appendChild(title);
-
-  quizData.forEach((item, idx) => {
-    const isCorrect = userAnswers[idx] === item.answer;
-    const row = document.createElement("span");
-
-    const icon = document.createElement("i");
-    icon.textContent = isCorrect ? "✔" : "✖";
-
-    const questionSpan = document.createElement("span");
-    questionSpan.textContent = item.question;
-
-    const status = document.createElement("i");
-    if (isCorrect) {
-      status.textContent = "OK";
-    } else {
-      const link = document.createElement("a");
-      link.href = item.linkHref;
-      link.textContent = `→ à relire (page ${item.category})`;
-      status.appendChild(link);
-    }
-
-    row.append(icon, questionSpan, status);
-    recapList.appendChild(row);
-  });
-
-  document.getElementById("final-score").textContent = `${score}/${total}`;
-
-  const msgEl = document.getElementById("score-message");
-  if (score === total) {
-    msgEl.textContent = "Parfait. Vous maîtrisez l'archive sur le bout des doigts. Human After All.";
-  } else if (score >= Math.ceil(total / 2)) {
-    msgEl.textContent = "Belle performance ! Quelques détails vous ont échappé, n'hésitez pas à relire les chapitres indiqués.";
-  } else {
-    msgEl.textContent = "Initialisation incomplète. Parcourez les archives du duo avant de retenter l'expérience.";
-  }
+function selectOption(idx) {
+  userAnswers[currentIndex] = idx;
+  renderQuestion();
 }
 
 if (btnPrev) {
@@ -203,10 +134,42 @@ if (btnNext) {
   });
 }
 
+function showResults() {
+  elActive.hidden = true;
+  elResults.hidden = false;
+
+  let score = 0;
+  const recapList = document.getElementById("recap-list");
+  recapList.innerHTML = "<small>Récapitulatif des réponses</small>";
+
+  quizData.forEach((item, idx) => {
+    const isCorrect = userAnswers[idx] === item.answer;
+    if (isCorrect) score++;
+
+    const row = document.createElement("span");
+    const icon = isCorrect ? "✔" : "✖";
+    const reread = isCorrect ? "OK" : `<a href="${item.linkHref}">→ à relire (page ${item.category})</a>`;
+
+    row.innerHTML = `<i>${icon}</i><span>${item.question}</span><i>${reread}</i>`;
+    recapList.appendChild(row);
+  });
+
+  document.getElementById("final-score").textContent = `${score}/${quizData.length}`;
+
+  const msgEl = document.getElementById("score-message");
+  if (score === 5) {
+    msgEl.textContent = "Parfait. Vous maîtrisez l'archive sur le bout des doigts. Human After All.";
+  } else if (score >= 3) {
+    msgEl.textContent = "Belle performance ! Quelques détails vous ont échappé, n'hésitez pas à relire les chapitres indiqués.";
+  } else {
+    msgEl.textContent = "Initialisation incomplète. Parcourez les archives du duo avant de retenter l'expérience.";
+  }
+}
+
 if (btnRestart) {
   btnRestart.addEventListener("click", () => {
     currentIndex = 0;
-    userAnswers.fill(null);
+    userAnswers = new Array(quizData.length).fill(null);
     elResults.hidden = true;
     elActive.hidden = false;
     renderQuestion();

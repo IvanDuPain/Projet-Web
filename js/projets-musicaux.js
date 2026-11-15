@@ -54,6 +54,3 @@ for (let i = 0; i < boutonsFermer.length; i++) {
         this.parentElement.close();
     });
 }
-
-
-
