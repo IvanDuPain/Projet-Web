@@ -36,13 +36,17 @@ for (let i = 0; i < filtres.length; i++) {
     });
 }
 
-// Ouvrir la fenêtre de l’album.
+// Ouvrir la fenêtre sans déplacer la page.
 let boutonsAlbums = document.querySelectorAll("[data-album]");
 
 for (let i = 0; i < boutonsAlbums.length; i++) {
     boutonsAlbums[i].addEventListener("click", function () {
+        let position = window.scrollY;
         let album = this.getAttribute("data-album");
+
         document.getElementById(album).showModal();
+
+        window.scrollTo(0, position);
     });
 }
 
