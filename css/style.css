@@ -1236,10 +1236,6 @@ footer p {
     padding-bottom: 8px;
   }
 
-  .album-card.is-filtered {
-    display: none;
-  }
-
   .masonry {
     display: flex;
     flex-direction: column;
@@ -2029,6 +2025,11 @@ footer p {
   height: 520px;
   object-fit: contain;
   transform: translateX(-50%);
+}
+
+/* Portraits de la page Membres : cadrage sur le casque */
+.photo-member {
+  object-position: center 15%;
 }
 
 .member .photo-portrait {
