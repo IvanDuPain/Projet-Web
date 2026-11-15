@@ -1,17 +1,3 @@
-/* ==========================================================
-   DAFT PUNK ARCHIVES — feuille de style
-   1. Variables et base
-   2. Navigation
-   3. Accueil : hero
-   4. Accueil : sections (index, musique, divers, membres)
-   5. Footer
-   6. Fenêtres (albums) et quiz
-   7. Sous-pages (en-tête, albums, projets divers, membres)
-   8. Photos
-   9. Page À propos
-   10. Responsive et accessibilité
-   ========================================================== */
-
 
 /* ---------- 1. Variables et base ---------- */
 :root {
@@ -970,6 +956,7 @@ footer p {
 
 /* Fenêtre <dialog> des albums */
 dialog.track-modal {
+  position: fixed; /* reste centré à l’écran, sans remonter en haut de la page */
   max-height: 85vh;
   margin: auto;
   overflow-y: auto;
