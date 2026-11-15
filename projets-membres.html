@@ -103,13 +103,6 @@
                 </svg>
             </div>
 
-            <img class="photo photo-portrait"
-                src="images/thomas.jpg"
-                alt="Thomas Bangalter, casque argent"
-                loading="lazy"
-                onload="this.parentElement.classList.add('has-photo')"
-                onerror="this.remove()">
-
             <div class="profile-content">
                 <span>Compositeur • Producteur • Fondateur de Roulé</span>
 
@@ -120,38 +113,10 @@
                     physique où le club, le cinéma et la musique orchestrale se rencontrent.
                 </p>
 
-                <div class="solo-works">
-                    <small>ŒUVRES SOLO / ASSOCIÉES</small>
-
-                    <span>
-                        <i>01</i>
-                        Stardust
-                        <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="1.7"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14m-6-6 6 6-6 6"/>
-                        </svg>
-                    </span>
-
-                    <span>
-                        <i>02</i>
-                        Irréversible
-                        <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="1.7"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14m-6-6 6 6-6 6"/>
-                        </svg>
-                    </span>
-
-                    <span>
-                        <i>03</i>
-                        Mythologies
-                        <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="1.7"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14m-6-6 6 6-6 6"/>
-                        </svg>
-                    </span>
+               <div class="solo-works">
+                    <button type="button" class="primary-button" data-album="bio-thomas">
+                        Biographie
+                    </button>
                 </div>
             </div>
         </article>
@@ -202,13 +167,6 @@
                 </svg>
             </div>
 
-            <img class="photo photo-portrait"
-                src="images/guyman.jpg"
-                alt="Guy-Manuel de Homem-Christo, casque or"
-                loading="lazy"
-                onload="this.parentElement.classList.add('has-photo')"
-                onerror="this.remove()">
-
             <div class="profile-content">
                 <span>Compositeur • Producteur • Fondateur de Crydamoure</span>
 
@@ -220,42 +178,42 @@
                 </p>
 
                 <div class="solo-works">
-                    <small>ŒUVRES SOLO / ASSOCIÉES</small>
-
-                    <span>
-                        <i>01</i>
-                        Crydamoure
-                        <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="1.7"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14m-6-6 6 6-6 6"/>
-                        </svg>
-                    </span>
-
-                    <span>
-                        <i>02</i>
-                        Le Knight Club
-                        <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="1.7"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14m-6-6 6 6-6 6"/>
-                        </svg>
-                    </span>
-
-                    <span>
-                        <i>03</i>
-                        Nightcall (Kavinsky)
-                        <svg aria-hidden="true" width="17" height="17" viewBox="0 0 24 24"
-                            fill="none" stroke="currentColor" stroke-width="1.7"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M5 12h14m-6-6 6 6-6 6"/>
-                        </svg>
-                    </span>
+                    <button type="button" class="primary-button" data-album="bio-guyman">
+                        Biographie
+                    </button>
                 </div>
             </div>
         </article>
 
     </main>
+        <!-- Biographie de Thomas -->
+    <dialog class="track-modal" id="bio-thomas" aria-labelledby="titre-thomas">
+        <button type="button" class="modal-close" aria-label="Fermer">×</button>
+
+        <h2 id="titre-thomas">Thomas Bangalter</h2>
+
+        <p>
+            C’est au lycée Carnot, à Paris, que Thomas rencontre Guy-Manuel.
+            Leur amitié commence par le rire : un camarade les présente parce que
+            Guy-Manuel sait imiter le magicien Garcimore. Les deux amis se mettent
+            ensuite à faire de la musique ensemble.
+        </p>
+    </dialog>
+
+    <!-- Biographie de Guy-Manuel -->
+    <dialog class="track-modal" id="bio-guyman" aria-labelledby="titre-guyman">
+        <button type="button" class="modal-close" aria-label="Fermer">×</button>
+
+        <h2 id="titre-guyman">Guy-Manuel de Homem-Christo</h2>
+
+        <p>
+            Avant le casque doré, Guy-Manuel fait ses débuts dans le rock.
+            En 1992, il forme Darlin’ avec ses amis Thomas Bangalter et Laurent
+            Brancowitz. Le nom du groupe vient d’une chanson des Beach Boys
+            qu’ils reprennent ensemble. Guy-Manuel poursuit ensuite l’aventure
+            avec Thomas en formant Daft Punk.
+        </p>
+    </dialog>
     <footer>
         <a class="wordmark footer-mark"
         href="index.html"
@@ -276,7 +234,7 @@
         </a>
     </footer>
 
-    <script src="js/site.js" defer></script>
+    <script src="js/projets-musicaux.js" defer></script>
 
 </body>
 </html>
