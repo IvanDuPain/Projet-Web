@@ -37,35 +37,39 @@
         <span class="subpage-kicker">1997 — 2013</span>
     </header>
     <main class="subpage-main" id="contenu">
-
-        <input type="radio" name="epoque" id="tous" checked>
-        <input type="radio" name="epoque" id="annees1990">
-        <input type="radio" name="epoque" id="annees2000">
-        <input type="radio" name="epoque" id="annees2010">
-
         <div class="subpage-toolbar">
             <span>Filtrer par époque</span>
 
             <div class="filter-row">
-                <label for="tous">Tous</label>
-                <label for="annees1990">1990s</label>
-                <label for="annees2000">2000s</label>
-                <label for="annees2010">2010s</label>
+                <button class="active" type="button" value="tous">
+                    Tous
+                </button>
+
+                <button type="button" value="epoque1990">
+                    1990s
+                </button>
+
+                <button type="button" value="epoque2000">
+                    2000s
+                </button>
+
+                <button type="button" value="epoque2010">
+                    2010s
+                </button>
             </div>
 
-            <span class="result-count">04 albums au total</span>
+            <span class="result-count" id="compteur">4 albums</span>
         </div>
-
         <div class="sub-album-grid">
 
             <!-- Album 1 -->
-            <article class="sub-album-card epoque1990">
+            <article class="sub-album-card">
                 <div class="sub-album-art">
                     <img class="photo"
                         src="img/Homework.jpg"
                         alt="Pochette de Homework">
 
-                    <button type="button">▶ Voir l’album</button>
+                    <button type="button" data-album="homework">▶ Voir l’album</button>
                 </div>
 
                 <div class="sub-album-info">
@@ -78,13 +82,13 @@
             </article>
 
             <!-- Album 2 -->
-            <article class="sub-album-card epoque2000">
+            <article class="sub-album-card">
                 <div class="sub-album-art">
                     <img class="photo"
                         src="img/Discovery.jpg"
                         alt="Pochette de Discovery">
 
-                    <button type="button">▶ Voir l’album</button>
+                    <button type="button" data-album="discovery">▶ Voir l’album</button>
                 </div>
 
                 <div class="sub-album-info">
@@ -97,13 +101,13 @@
             </article>
 
             <!-- Album 3 -->
-            <article class="sub-album-card epoque2000">
+            <article class="sub-album-card">
                 <div class="sub-album-art">
                     <img class="photo"
                         src="img/Human_After_All.jpg"
                         alt="Pochette de Human After All">
 
-                    <button type="button">▶ Voir l’album</button>
+                    <button type="button" data-album="human-after-all">▶ Voir l’album</button>
                 </div>
 
                 <div class="sub-album-info">
@@ -116,13 +120,13 @@
             </article>
 
             <!-- Album 4 -->
-            <article class="sub-album-card epoque2010">
+            <article class="sub-album-card">
                 <div class="sub-album-art">
                     <img class="photo"
                         src="img/Random_Access_Memories.jpg"
                         alt="Pochette de Random Access Memories">
 
-                    <button type="button">▶ Voir l’album</button>
+                    <button type="button" data-album="ram">▶ Voir l’album</button>
                 </div>
 
                 <div class="sub-album-info">
@@ -141,6 +145,98 @@
         <p>Une célébration non officielle de l’héritage du duo.</p>
         <a class="back-top" href="#top">Haut de page <svg aria-hidden="true" fill="none" height="20" viewBox="0 0 24 24" width="20"><g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.7"><path d="M5 12h14"/><path d="m13 6 6 6-6 6"/></g></svg></a>
     </footer>
+    <dialog class="track-modal" id="homework"
+        aria-labelledby="titre-homework">
+        <button class="modal-close" type="button" aria-label="Fermer">×</button>
+
+        <h2 id="titre-homework">Homework</h2>
+
+        <ol class="track-list">
+            <li>Daftendirekt</li>
+            <li>WDPK 83.7 FM</li>
+            <li>Revolution 909</li>
+            <li>Da Funk</li>
+            <li>Phoenix</li>
+            <li>Fresh</li>
+            <li>Around the World</li>
+            <li>Rollin’ &amp; Scratchin’</li>
+            <li>Teachers</li>
+            <li>High Fidelity</li>
+            <li>Rock’n Roll</li>
+            <li>Oh Yeah</li>
+            <li>Burnin’</li>
+            <li>Indo Silver Club</li>
+            <li>Alive</li>
+            <li>Funk Ad</li>
+        </ol>
+    </dialog>
+
+    <dialog class="track-modal" id="discovery"
+            aria-labelledby="titre-discovery">
+        <button class="modal-close" type="button" aria-label="Fermer">×</button>
+
+        <h2 id="titre-discovery">Discovery</h2>
+
+        <ol class="track-list">
+            <li>One More Time</li>
+            <li>Aerodynamic</li>
+            <li>Digital Love</li>
+            <li>Harder, Better, Faster, Stronger</li>
+            <li>Crescendolls</li>
+            <li>Nightvision</li>
+            <li>Superheroes</li>
+            <li>High Life</li>
+            <li>Something About Us</li>
+            <li>Voyager</li>
+            <li>Veridis Quo</li>
+            <li>Short Circuit</li>
+            <li>Face to Face</li>
+            <li>Too Long</li>
+        </ol>
+    </dialog>
+
+    <dialog class="track-modal" id="human-after-all"
+            aria-labelledby="titre-human-after-all">
+        <button class="modal-close" type="button" aria-label="Fermer">×</button>
+
+        <h2 id="titre-human-after-all">Human After All</h2>
+
+        <ol class="track-list">
+            <li>Human After All</li>
+            <li>The Prime Time of Your Life</li>
+            <li>Robot Rock</li>
+            <li>Steam Machine</li>
+            <li>Make Love</li>
+            <li>The Brainwasher</li>
+            <li>On/Off</li>
+            <li>Television Rules the Nation</li>
+            <li>Technologic</li>
+            <li>Emotion</li>
+        </ol>
+    </dialog>
+
+    <dialog class="track-modal" id="ram"
+            aria-labelledby="titre-ram">
+        <button class="modal-close" type="button" aria-label="Fermer">×</button>
+
+        <h2 id="titre-ram">Random Access Memories</h2>
+
+        <ol class="track-list">
+                <li>Give Life Back to Music</li>
+                <li>The Game of Love</li>
+                <li>Giorgio by Moroder</li>
+                <li>Within</li>
+                <li>Instant Crush</li>
+                <li>Lose Yourself to Dance</li>
+                <li>Touch</li>
+                <li>Get Lucky</li>
+                <li>Beyond</li>
+                <li>Motherboard</li>
+                <li>Fragments of Time</li>
+                <li>Doin’ It Right</li>
+                <li>Contact</li>
+        </ol>
+    </dialog>
     <div id="modal-root"></div>
 
     <script src="js/site.js" defer></script>
