@@ -303,49 +303,6 @@ a:focus-visible {
   height: 700px;
 }
 
-/* Casques dessinés : affichés seulement si la photo ne charge pas */
-.hero-visual .helmet {
-  position: absolute;
-  bottom: 0;
-}
-
-.hero-silver {
-  left: 0;
-  width: 57%;
-}
-
-.hero-gold {
-  right: -2%;
-  width: 61%;
-}
-
-.visual-label {
-  position: absolute;
-  z-index: 4;
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  color: #777;
-  font-family: var(--mono);
-  font-size: 9px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.visual-label span {
-  color: var(--white);
-}
-
-.visual-label-left {
-  top: 28%;
-  left: -3%;
-}
-
-.visual-label-right {
-  top: 40%;
-  right: -1%;
-}
-
 /* Cercles décoratifs */
 .hero-orbit {
   position: absolute;
